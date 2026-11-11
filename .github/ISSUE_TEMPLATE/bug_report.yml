@@ -1,0 +1,60 @@
+name: Bug report
+description: Something is broken or behaves differently from the documentation.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please read [CONTRIBUTING.md](https://github.com/TheCoder30ec4/agent-orchestrator-skill/blob/main/CONTRIBUTING.md) first.
+        **Remove secrets and private data** (keys, tokens, personal paths, customer data) from anything you paste.
+        Security issues: use private vulnerability reporting (Security tab), not a public issue.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: One problem per issue. What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Enter Plan Mode in VS Code
+        2. Prompt: "..."
+        3. Approve the plan
+        4. See error ...
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where are you running Claude Code?
+      options: [CLI, VS Code extension, JetBrains, Desktop (Code tab), claude.ai (uploaded skill), Headless (-p / SDK)]
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: Install method
+      options: [Plugin (install.py plugin / marketplace), Skill + hooks (install.py skill), claude.ai ZIP, --plugin-dir]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versions
+      placeholder: "claude --version → 2.1.322; agent-orchestrator 1.0.0; python 3.12"
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: "`orch.py env` output"
+      render: markdown
+  - type: textarea
+    id: logs
+    attributes:
+      label: Run report / hook log (optional)
+      description: "`orch.py status --full`, relevant lines from `ORCH_HOOK_LOG`, or error text."
+      render: text

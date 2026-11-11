@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Usage question or setup help
+    url: https://github.com/TheCoder30ec4/agent-orchestrator-skill/blob/main/README.md#14-troubleshooting
+    about: Check the README troubleshooting table first. If it doesn't answer your question, open a bug report with your `orch.py env` output.
+  - name: Report a security vulnerability
+    url: https://github.com/TheCoder30ec4/agent-orchestrator-skill/security/advisories/new
+    about: Hook bypasses, permission escalation and similar issues. Please report them privately, not in a public issue.

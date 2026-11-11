@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest new behaviour, a seed role, a hook, or a CLI command.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Prefer native Claude Code features (skills, subagents, hooks) over new machinery. Name the ones you'd use if you know them.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: I'd be willing to open a PR (stdlib only, with a unit test)

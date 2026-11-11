@@ -361,3 +361,9 @@ tests/test_orch.py, tests/e2e/
 ```
 
 The 9 separate scripts from the original proposal (create_agent, create_team, register, validate, list, remove, generate_plan, task_manager, validate_environment) are subcommands of one `orch.py`. They share one parser, one registry and one state format, which avoids nine copies of the same plumbing.
+
+## Changelog, contributing, license
+
+- [CHANGELOG.md](CHANGELOG.md): release history and known limitations. Release notes are on the [Releases](https://github.com/TheCoder30ec4/agent-orchestrator-skill/releases) page.
+- [CONTRIBUTING.md](CONTRIBUTING.md): issue guidelines, PR checklist, release steps. Report security problems privately through the Security tab.
+- [MIT License](LICENSE).
