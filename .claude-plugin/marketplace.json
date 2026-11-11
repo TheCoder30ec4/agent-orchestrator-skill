@@ -1,0 +1,14 @@
+{
+  "name": "agent-orchestrator",
+  "owner": {
+    "name": "local"
+  },
+  "plugins": [
+    {
+      "name": "agent-orchestrator",
+      "source": "./plugin",
+      "description": "Dynamic multi-agent orchestration skill, agent factory, and hooks for Claude Code."
+    }
+  ],
+  "description": "Local marketplace for the agent-orchestrator plugin."
+}

@@ -1,0 +1,88 @@
+{
+  "T1": {
+    "prompt": "Create a Python script that reads a CSV and generates a report. Sample data is in data.csv.",
+    "budget": 4,
+    "files": {
+      "data.csv": "date,region,product,units,unit_price\n2026-01-03,North,Widget,12,9.99\n2026-01-04,South,Gadget,5,24.50\n2026-01-04,North,Gadget,3,24.50\n2026-01-05,East,Widget,20,9.99\n2026-01-06,West,Doohickey,7,14.00\n2026-01-06,South,Widget,9,9.99\n2026-01-07,East,Gadget,,24.50\n2026-01-08,North,Doohickey,4,14.00\n"
+    },
+    "checks": [
+      "{CHECK} agents_max 1",
+      "{CHECK} csv_report"
+    ]
+  },
+  "T2": {
+    "prompt": "Build a complete task management application with authentication, database, frontend, backend, Docker, and tests. This is a non-interactive run: do not ask me questions, make reasonable assumptions and proceed through execution. Do not deploy anything.",
+    "budget": 45,
+    "timeout": 5400,
+    "init": true,
+    "checks": [
+      "{CHECK} agents_min 4",
+      "{CHECK} generated_agents_used",
+      "{CHECK} hook_spawns_min 4",
+      "{CHECK} run_complete",
+      "{CHECK} exists '**/Dockerfile*'"
+    ],
+    "authorize": true
+  },
+  "T3": {
+    "prompt": "Build an AI-powered RAG application with document ingestion, embeddings, vector search, and a chat interface. Environment constraint: no LLM or embedding API keys are available here, so it must run fully offline (local embeddings, with a pluggable LLM interface and an extractive-answer fallback). Sample documents are in docs/. Include a retrieval-quality evaluation. This is a non-interactive run: do not ask me questions, make reasonable assumptions and proceed through execution. Do not deploy anything.",
+    "budget": 45,
+    "timeout": 5400,
+    "init": true,
+    "files": {
+      "docs/returns.md": "# Returns policy\nItems can be returned within 30 days of delivery for a full refund. Opened electronics carry a 15% restocking fee. Refunds are issued to the original payment method within 5 business days of receiving the item.\n",
+      "docs/shipping.md": "# Shipping\nStandard shipping takes 3-5 business days and is free on orders over $50. Express shipping takes 1-2 business days and costs $15. We ship to the US, Canada and the EU. Orders placed before 2pm ET ship the same day.\n",
+      "docs/warranty.md": "# Warranty\nAll devices include a 2-year limited warranty covering manufacturing defects. Water damage and accidental drops are not covered. Warranty claims require the order number and a photo of the defect.\n",
+      "docs/accounts.md": "# Accounts\nPasswords must be at least 12 characters. Two-factor authentication can be enabled under Settings > Security. Accounts inactive for 24 months are deleted after an email warning.\n"
+    },
+    "checks": [
+      "{CHECK} agents_min 3",
+      "{CHECK} generated_agents_used",
+      "{CHECK} hook_spawns_min 3",
+      "{CHECK} run_complete"
+    ],
+    "authorize": true
+  },
+  "T4": {
+    "prompt": "Research the current state of WebAssembly outside the browser (WASI versions, the component model, major runtimes and their production use) and produce a detailed, fact-checked report in report.md with sources. This is a non-interactive run: do not ask me questions; proceed through execution.",
+    "budget": 20,
+    "timeout": 3600,
+    "checks": [
+      "{CHECK} agents_min 3",
+      "{CHECK} generated_agents_used",
+      "{CHECK} run_complete",
+      "{CHECK} urls_min report.md 8"
+    ],
+    "authorize": true
+  },
+  "T5": {
+    "prompt": "Build a production-ready SaaS application with authentication, subscription management, an AI assistant, analytics, and deployment.",
+    "mode": "plan",
+    "budget": 8,
+    "timeout": 1800,
+    "checks": [
+      "{CHECK} hook_fired",
+      "{CHECK} skill_invoked",
+      "{CHECK} plan_valid",
+      "{CHECK} no_project_writes"
+    ]
+  },
+  "T6": {
+    "prompt": "Build a small Python package `textkit` with: a tokenizer module, a statistics module (word/sentence counts, Flesch reading ease) that must use the tokenizer module, a command-line interface that uses both, unit tests for each module, and a README. Use a team of agents with parallel work where possible. This is a non-interactive run: do not ask me questions; proceed through execution.",
+    "followups": [
+      "Continue the interrupted work. This is a non-interactive run: do not ask me questions; proceed."
+    ],
+    "interrupt": {
+      "after_done": 1
+    },
+    "budget": 20,
+    "timeout": 3600,
+    "init": true,
+    "checks": [
+      "{CHECK} no_redo",
+      "{CHECK} run_complete",
+      "{CHECK} exists '**/test*.py'"
+    ],
+    "authorize": true
+  }
+}

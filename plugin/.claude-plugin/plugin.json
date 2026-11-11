@@ -1,0 +1,13 @@
+{
+  "name": "agent-orchestrator",
+  "version": "1.0.0",
+  "description": "Dynamic multi-agent orchestration: designs the right team of native subagents for each task, plans dependency waves, delegates, tracks resumable state, and auto-activates in Plan Mode.",
+  "keywords": [
+    "agents",
+    "orchestration",
+    "subagents",
+    "plan-mode",
+    "multi-agent"
+  ],
+  "license": "MIT"
+}

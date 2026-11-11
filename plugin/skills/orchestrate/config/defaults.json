@@ -1,0 +1,15 @@
+{
+  "max_agents": 12,
+  "max_parallel": 5,
+  "max_depth": 2,
+  "max_retries": 2,
+  "require_approval_above_agents": 3,
+  "default_model": "inherit",
+  "temp_agent_prefix": "orch",
+  "allow_bypass_permissions": false,
+  "plan_mode_trigger": true,
+  "enforce_ownership": true,
+  "protect_core": true,
+  "suggest_outside_plan_mode": true,
+  "suggest_min_words": 10
+}
